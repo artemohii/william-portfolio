@@ -1,0 +1,53 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+
+}
+body {
+    font-family: $font;
+    background: $color-dark_1;
+    color: $color-white;
+}
+html, body {
+    &._overflow {
+        overflow: hidden;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1180px;
+    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+hr {
+    border-bottom: 0.1px solid  rgba(255, 255, 255, 0.15);
+    margin-bottom: 90px;
+}
+.btn {
+    cursor: pointer;
+    @include text (500, 16px, 19px, $color-white);
+    background: $color-primary;
+    transition: $transition;
+    border: 0;
+    border-radius: 5px;
+    outline: 0;
+
+}
+.content-hidden {
+    display: none;
+}
+.hidden {
+    display: none;
+}
+.item {
+    
+}
+.orange {
+    transform: translateY(-10px);
+    background: $color-primary;
+}

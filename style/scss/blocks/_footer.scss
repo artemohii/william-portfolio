@@ -1,0 +1,56 @@
+.footer {
+    background: $color-dark_2;
+    padding: 53px 150px;
+    @include tablet {
+        padding: 30px 10px;
+    }
+    
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include tablet-small {
+            flex-direction: column-reverse;
+            gap: 30px;
+        }
+
+    }
+    &__license {
+        cursor: default;
+        @include text (400, 16px, 19px, $color-white);
+        @include tablet-small {
+            @include text (400, 12px, 19px, $color-white);
+
+        }
+    span {
+        color: $color-primary;
+    }
+    }
+
+    // .footer__nav
+
+    &__nav {
+    }
+
+    // .footer__ul
+
+    &__ul {
+        display: flex;
+        gap: 34px;
+    }
+
+    // .footer__li
+
+    &__li {
+    }
+
+    // .footer__a
+
+    &__a {
+        transition: $transition;
+    }
+    &__a:hover {
+        color: $color-primary;
+    }
+}
+

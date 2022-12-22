@@ -1,0 +1,201 @@
+.main-screen {
+
+    // .main-screen__body
+
+    &__body {
+        display: flex;
+        align-items: center;
+        gap: 97px;
+        @include desktop-small {
+            flex-direction: column-reverse;
+            gap: 0;
+        }
+        margin-bottom: 85px;
+    }
+
+    // .main-screen__info
+
+    &__info {
+        flex-shrink: 0;
+        @include tablet-small {
+            text-align: center;
+        }
+    }
+
+    // .main-screen__title
+
+    &__title {
+        @include text (700, 92px, 109px, $color-white);
+        margin-bottom: 24px;
+        @include tablet-small {
+            font-size: 54px;
+            line-height: 62px;
+        }
+    }
+
+    // .main-screen__subtitle
+    &__subtitle {
+        @include text (500, 18px, 21px, $color-white);
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        display: flex;
+        gap: 27px;
+        @include tablet-small {
+            flex-direction: column;
+        }
+    }
+    &__desc {
+        max-width: 557px;
+        @include text (400, 16px, 160%, $color-body);
+        margin-bottom: 24px;
+    }
+
+    // .main-screen__btn
+
+    &__btn {
+        padding: 13px 18px;
+    }
+    &__btn:hover {
+        @include shadow;
+
+    }
+
+    // .main-screen__avatar
+
+    &__avatar {
+        @include tablet-small {
+        }
+    }
+
+    // .main-screen__img
+
+    &__img {
+        position: relative;
+        border-radius: 50%;
+        &::before, &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            background: $color-grad;
+            border-radius: 50%;
+            @include mobile {
+                display: none;
+            }
+        }
+        &::before {
+            width: 342px;
+            height: 342px;
+            top: -51px;
+            right: -25px;
+        }
+        &::after {
+            width: 209px;
+            height: 209px;
+            bottom: -40px;
+            left: 27px;
+        }
+        img {
+            z-index: 1;
+            position: relative;
+            border-radius: 50%;
+        }
+    }
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 37px 0;
+    margin-bottom: 51px;
+    @include tablet-small {
+        margin-bottom: 0;
+    }
+
+    // .header__logo
+
+    &__logo {
+        @include text (700, 28px, 33px, $color-white);
+        transition: $transition;
+        span {
+            color: $color-primary ;
+        }
+    }
+    &__logo:hover {
+        color: $color-primary;
+    }
+    &__burger {
+        display: none;
+        @include desktop-small {
+            display: block;
+        }
+    }
+    
+}
+
+.header-nav {
+ 
+    // .header-nav__ul
+    .material-icons {
+        display: none;
+        @include desktop-small {
+            display: block;
+            position: absolute;
+            top: 40px;
+            right: 20px;
+        }
+    }
+    &__ul {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    // .header-nav__li
+    &__li {
+    }
+    &__li:first-of-type a{
+        transition: $transition;
+        color: $color-primary;
+
+    }
+    
+    // .header-nav__a
+
+    &__a {
+        transition: $transition;
+        display: inline-block;
+        padding: 10px;
+        @include text (400, 16px, 19px, $color-white);
+    }
+    &__a:hover {
+        color: $color-primary;
+        @include shadow;
+    }
+    @include desktop-small {
+        transform: translateX(-150%);
+        position: fixed;
+        z-index: 9;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba($color: #000000, $alpha: 0.8);
+        transition: $transition;
+        .header-nav__ul {
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: $transition;
+
+        }
+        .header-nav__a {
+            font-size: 18px;
+        }
+    }
+    &._active {
+        transform: translateX(0);
+
+    }
+
+}
